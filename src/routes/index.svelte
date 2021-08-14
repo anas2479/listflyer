@@ -5,8 +5,12 @@
 <div id="list" class="list_container">
     <!--add item model-->
     <div class="add-list-item show-{addListItem_show}">
+        <div class="header d-flex justify-content-between">
+            <span></span>
+            <div on:click="{addListItem_model_show}" class="bg-danger rounded-circle close d-flex justify-content-center align-items-center"><img src="/x-circle.svg" alt="close icon"></div>
+        </div>
         <form action="#" class="d-flex flex-wrap align-items-center flex-sm-row  flex-column">
-            <input id="listTitle" type="text" bind:this="{newItemInput}" bind:value="{newItemInputcontent}" placeholder="Enter Title" class="input me-1">
+            <input id="listTitle" type="text" bind:this="{newItemInput}" bind:value="{newItemInputcontent}"  placeholder="Enter Title" class="input me-1">
             <button on:click|preventDefault ="{createItem}" class="btn btn-light mt-3  mt-sm-0">Add</button>
         </form>
     </div>
@@ -73,9 +77,11 @@
     function addListItem_model_show(){
         if (addListItem_show === false) {
             addListItem_show = true
+            newItemInput.disabled = false
             newItemInput.focus()
         }else{
             addListItem_show = false
+            
         }
         
         addListItem_show = addListItem_show
@@ -99,6 +105,7 @@
             list_items = list_items
             newItemInputcontent = ''
             addListItem_show = false
+            newItemInput.disabled = true
             }
     }
 
@@ -115,7 +122,7 @@
 
 
 
-<style>
+<style lang="scss">
     #list{
         background: #F9FAFB;
         max-width: 600px;
@@ -175,7 +182,7 @@
         opacity: 0;
         pointer-events: none;
         max-width: 300px;
-        padding: 20px;
+        padding: 10px 20px 20px 20px;
         background: #FFFFFF;
         border: 1px solid #E5E7EB;
         box-sizing: border-box;
@@ -197,4 +204,13 @@
         opacity: 1;
         pointer-events: all;
     }
+
+    .add-list-item .header .close{
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+
+    }
+
+    
 </style>
