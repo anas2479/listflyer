@@ -5,7 +5,7 @@
 <div id="list" class="list_container">
     <!--add item model-->
     <div class="add-list-item show-{addListItem_show}">
-        <div class="header d-flex justify-content-between">
+        <div class="header d-flex justify-content-between mb-2">
             <span></span>
             <div on:click="{addListItem_model_show}" class="bg-danger rounded-circle close d-flex justify-content-center align-items-center"><img src="/x-circle.svg" alt="close icon"></div>
         </div>
