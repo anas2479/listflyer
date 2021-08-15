@@ -94,7 +94,7 @@
     let newItemInputcontent 
 
     function createItem(){
-        if (newItemInputcontent.length >= 1){
+        if (newItemInput.value.length >= 1){
             let newItem = {
             title:newItemInputcontent,
             comment:"",
