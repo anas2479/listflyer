@@ -1,6 +1,1 @@
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.1.5/workbox-sw.js');
-
-workbox.routing.registerRoute(
-    ({request}) => request.destination === 'image',
-    new workbox.strategies.CacheFirst()
-  );
+const e=self,t="cache1629002951920",s=["/_app/start-6087dc9e.js","/_app/assets/start-a8cd1609.css","/_app/layout.svelte-befb0817.js","/_app/error.svelte-814ea84d.js","/_app/pages/index.svelte-7dbd484d.js","/_app/assets/pages/index.svelte-816831a4.css","/_app/chunks/vendor-7f8bc144.js"].concat(["/app-Icon.png","/favicon.png","/manifest.json","/trash.svg","/x-circle.svg"]),a=new Set(s);e.addEventListener("install",(a=>{a.waitUntil(caches.open(t).then((e=>e.addAll(s))).then((()=>{e.skipWaiting()})))})),e.addEventListener("activate",(s=>{s.waitUntil(caches.keys().then((async s=>{for(const e of s)e!==t&&await caches.delete(e);e.clients.claim()})))})),e.addEventListener("fetch",(e=>{if("GET"!==e.request.method||e.request.headers.has("range"))return;const t=new URL(e.request.url),s=t.protocol.startsWith("http"),n=t.hostname===self.location.hostname&&t.port!==self.location.port,c=t.host===self.location.host&&a.has(t.pathname),o="only-if-cached"===e.request.cache&&!c;!s||n||o||e.respondWith((async()=>c&&await caches.match(e.request)||async function(e){const t=await caches.open("offline1629002951920");try{const s=await fetch(e);return t.put(e,s.clone()),s}catch(s){const a=await t.match(e);if(a)return a;throw s}}(e.request))())}));
