@@ -1,6 +1,6 @@
 {
-    "short_name":"Listify",
-    "name":"Listify",
+    "short_name":"Listflyer",
+    "name":"Listflyer",
     "icons":[
         {
           "src": "/icons/manifest-icon-192.png",
