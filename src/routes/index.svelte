@@ -67,14 +67,35 @@
 <script>
 
     import _ from 'lodash'
+    import cookie from 'js-cookie'
+    //cookie.remove('list')
 
-    let list_items = [
-        {
+
+    let list_items 
+
+    if(cookie.get('list')=== undefined){
+
+        list_items = [{
             title:"Merge the new branch with master.",
             comment:"",
             done:false
-        }
-    ]
+        }]
+
+        cookie.set('list', JSON.stringify(list_items))
+
+        console.log('list initialized');
+        console.log(cookie.get('list'));
+    }else{
+        list_items = JSON.parse(cookie.get('list'))
+        console.log(list_items);
+    }
+
+
+    function save(){
+        cookie.set('list', JSON.stringify(list_items))
+        list_items = JSON.parse(cookie.get('list'))
+    }
+
 
     function checkOut(item){
         if (item.done === false){
@@ -83,7 +104,8 @@
         }else{
             item.done = false
         }
-        list_items = list_items
+        save()
+        
     }
 
 
@@ -131,7 +153,7 @@
             
         }
         
-        addListItem_show = addListItem_show
+        save()
     }
 
 
@@ -149,7 +171,7 @@
             }
 
             list_items.push(newItem)
-            list_items = list_items
+            save()
 
             newItemInputcontent = ''
             addListItem_show = false
@@ -163,7 +185,7 @@
 
     function removeItem(item){
         _.remove(list_items, item)
-        list_items = list_items
+        save()
     }
 
 
