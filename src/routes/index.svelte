@@ -76,9 +76,9 @@
     if(cookie.get('list')=== undefined){
 
         list_items = [{
-            title:"Merge the new branch with master.",
+            title:"Start using Listiflyer ✨",
             comment:"",
-            done:false
+            done:true
         }]
 
         cookie.set('list', JSON.stringify(list_items))
