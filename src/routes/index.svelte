@@ -12,7 +12,7 @@
                 <div on:click="{()=>viewItem_model = false}" class="bg-danger rounded-circle close d-flex justify-content-center align-items-center"><img src="/x-circle.svg" alt="close icon"></div>
             </div>
             <h5>{itemInView_data.title}</h5>
-            <div>{itemInView_data.comment}</div>
+            <p class="text-muted">{itemInView_data.comment}</p>
         </div>
         <!--/view item model-->
 
@@ -68,7 +68,7 @@
 
     import _ from 'lodash'
     import cookie from 'js-cookie'
-    //cookie.remove('list')
+    cookie.remove('list')
 
 
     let list_items 
@@ -77,7 +77,7 @@
 
         list_items = [{
             title:"Start using Listiflyer ✨",
-            comment:"",
+            comment:"Thank you for using Listflyer!",
             done:true
         }]
 
