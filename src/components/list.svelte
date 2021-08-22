@@ -63,7 +63,6 @@
 
     import _ from 'lodash'
     import cookie from 'js-cookie'
-    cookie.remove('list')
 
 
     let list_items 
