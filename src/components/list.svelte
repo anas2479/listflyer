@@ -190,6 +190,7 @@
 <style>
     #list{
         background: #F9FAFB;
+        margin: auto auto;
         max-width: 600px;
         padding: 10px 10px;
         border-radius: 10px;
